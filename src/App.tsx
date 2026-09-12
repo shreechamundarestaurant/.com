@@ -1,4 +1,5 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import { getRouterBasename } from './routerBasename'
 import { Layout } from './components/Layout'
 import { About } from './pages/About'
 import { Banquet } from './pages/Banquet'
@@ -8,7 +9,7 @@ import { Menu } from './pages/Menu'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={getRouterBasename()}>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
